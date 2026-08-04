@@ -24,10 +24,10 @@ Produce an implementation-ready product and technical specification for Wayfinde
 <!-- Resolution pointers are appended here when a ticket is closed. -->
 
 - [Establish Pi's desktop integration contract](issues/01-research-pi-integration-contract.md) — Use a version-pinned SDK Runtime Supervisor with an app-owned semantic event/tool contract; keep Pi sessions local and provider credentials behind backend tools.
+- [Prototype the Control Station and decision batches](issues/02-prototype-control-station-and-decision-batches.md) — Use a compact Project → Issue → Action tree with Issue-level running state, zero-or-more actions, and modal prototype review.
 
 ## Not yet specified
 
-- The exact information architecture and visual grammar of the Control Station and decision-batch workspace.
 - Account authentication, encryption boundaries, credential-vault operations, and recovery.
 - Local Project discovery, repository/worktree validation, setup, and lifecycle semantics.
 - The detailed data model and reconciliation behavior between local runs, the backend projection, and external tracker state.
