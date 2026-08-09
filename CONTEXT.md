@@ -4,7 +4,19 @@
 
 ### Weave
 
-A scoped journey for one Project that starts from a destination, maps the decisions and work needed to reach it, and—in the initial Loom v1—continues through implementation rather than ending at a planning handoff.
+A scoped journey for one Project that starts from a destination, maps the decisions and work needed to reach it, and—in the initial Loom v1—continues through implementation rather than ending at a planning handoff. Its lifecycle is explicit and separate from its Ticket summary, because Tickets may run and wait independently. It becomes completed automatically only when every one of its Tickets is completed; a cancelled Ticket prevents completion until it is replaced or removed from the Weave. Cancelling a Weave cascades cancellation to all unfinished Tickets and becomes effective only once affected device-local sessions have stopped. Pausing a Weave pauses only its currently running sessions; resuming it resumes only the sessions paused by that command.
+
+### Ticket
+
+A discrete unit of planning or implementation work within a Weave. A new Ticket is `ready` until a person starts its first Agent session. A Ticket may have at most one active Agent session, while other Tickets in the same Weave may run their own Agent sessions concurrently. An Agent's completed session awaits human review; the Ticket is completed only when a person accepts its result. When its current session is unrecoverably failed, the Ticket is `failed` until a person explicitly starts a replacement session. A person may pause and resume a Ticket's active session. Cancelling a Ticket is terminal and cancels its pending Action and active session. Work that must continue after cancellation is a new, linked replacement Ticket rather than a restoration of the cancelled one.
+
+### Agent session
+
+A device-local attempt by an Agent to advance one Ticket on one Device. Loom attempts to recover an interrupted session from its Yesble local context after events such as network loss or device shutdown. An unrecoverable session reaches terminal `failed`; a person may pause and later resume the same session from its retained local context. Finished, failed, cancelled, or superseded attempts remain as the Ticket's session history, and only one attempt may be active at a time.
+
+### Action
+
+A human-authorized operation an Agent requests from its Ticket when it cannot safely proceed on its own. An Action starts as `requested`; approval makes it `running`, and success makes it `completed`. It may instead end as `declined`, `failed`, or `cancelled`. While an Action awaits a person, its Ticket is waiting for human input and its active Agent session is paused with its local context retained. Once approved, the Ticket waits for the Action's result while that session remains paused. Only a completed Action resumes that session; every other terminal Action outcome remains immutable history and requires a new Action to retry. Cancelling an Action does not discard its paused session or Ticket.
 
 ### Project
 

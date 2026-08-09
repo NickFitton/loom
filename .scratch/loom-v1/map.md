@@ -15,6 +15,7 @@ Deliver Loom v1: a single-user Electron desktop platform that lets a person conn
 
 ## Decisions so far
 
+- [Define the Weave, Ticket, Action, and agent-session state model](issues/02-define-weave-ticket-action-state-model.md) — Separate, audited Weave, Ticket, Action, and session state machines keep local context durable and every human next action explicit.
 - [Research Pi integration for durable local agent sessions](issues/01-research-pi-integration.md) — Use pinned local Pi SDK sessions and exact JSONL session pointers; Pi needs external containment to enforce Loom's worktree boundary.
 - [Research Electron security boundaries for local agent execution](issues/07-research-electron-security-boundaries.md) — Sandboxed renderer and a narrow validated main/preload capability bridge; Electron does not sandbox Pi or Git.
 
