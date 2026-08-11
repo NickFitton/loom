@@ -24,7 +24,11 @@ A Device-owned local Git repository connection, identified by a user-provided na
 
 ### Device
 
-A user-controlled computer that has authenticated to an Account. It can be named and removed from the Account, except for the device currently in use.
+A user-controlled computer enrolled by a verified Account. It can be named and removed from the Account, except for the Device currently in use. Removal is terminal for that Device identity; a later sign-in enrols a new Device. A Device may temporarily be offline without being removed.
+
+### Device lease
+
+The time-limited authority an enrolled Device holds to execute Agent work and synchronize Loom state. Its expiry pauses that authority but does not remove or revoke the Device.
 
 ### Control plane
 
@@ -40,7 +44,7 @@ The single-user identity authenticated through Better Auth. An Account owns its 
 
 ### Provider credential
 
-A user-supplied model-provider API key, stored only in the secure credential store of the Device that uses it. It is never sent to Loom's control plane.
+A user-supplied model-provider API key, stored only in the secure credential store of the Device that uses it. It is never sent to Loom's control plane and is deleted when that Device is removed.
 
 ### Agent worktree
 
