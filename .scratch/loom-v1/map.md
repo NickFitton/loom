@@ -21,6 +21,7 @@ Deliver Loom v1: a single-user Electron desktop platform that lets a person conn
 - [Prototype the action tree and action modal](issues/03-prototype-the-action-tree-and-modal.md) — Navigator + Detail: collapsible source list with roll-up panels at every level (All projects / Project / Weave / Ticket); action cards inline in the detail panel; agent progress as a timestamped activity log, not a chat transcript.
 - [Define the device-local Project and Git lifecycle](issues/04-define-local-project-and-git-lifecycle.md) — Projects are explicit Device-local Git-clone connections; origins associate core repositories without deduplicating clones, and Agent worktrees are session-scoped, recoverable, and applied only through a human Action.
 - [Define the account, device, and authentication contract](issues/05-define-account-device-authentication-contract.md) — Browser-based verified-email sign-in enrols secure Devices; a short Device lease bounds offline authority, while revocation deletes local authority and credentials.
+- [Define the orchestration, scheduling, and recovery protocol](issues/06-define-orchestration-and-recovery-protocol.md) — Weaves automatically queue ready Tickets against Device capacity; versioned idempotent commands and conservative recovery keep cross-device control safe.
 
 ## Not yet specified
 
