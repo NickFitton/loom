@@ -19,6 +19,7 @@ Deliver Loom v1: a single-user Electron desktop platform that lets a person conn
 - [Research Pi integration for durable local agent sessions](issues/01-research-pi-integration.md) — Use pinned local Pi SDK sessions and exact JSONL session pointers; Pi needs external containment to enforce Loom's worktree boundary.
 - [Research Electron security boundaries for local agent execution](issues/07-research-electron-security-boundaries.md) — Sandboxed renderer and a narrow validated main/preload capability bridge; Electron does not sandbox Pi or Git.
 - [Prototype the action tree and action modal](issues/03-prototype-the-action-tree-and-modal.md) — Navigator + Detail: collapsible source list with roll-up panels at every level (All projects / Project / Weave / Ticket); action cards inline in the detail panel; agent progress as a timestamped activity log, not a chat transcript.
+- [Define the device-local Project and Git lifecycle](issues/04-define-local-project-and-git-lifecycle.md) — Projects are explicit Device-local Git-clone connections; origins associate core repositories without deduplicating clones, and Agent worktrees are session-scoped, recoverable, and applied only through a human Action.
 
 ## Not yet specified
 

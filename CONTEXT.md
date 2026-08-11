@@ -44,4 +44,4 @@ A user-supplied model-provider API key, stored only in the secure credential sto
 
 ### Agent worktree
 
-A Git worktree and branch created for one implementation ticket. An agent may read and modify files only within this worktree. It may not push a remote, change machine-wide settings, or access files outside the Project unless the user triggers an explicit Action.
+A Git worktree and branch created for an implementation Ticket's active Agent session. A paused or otherwise resumable session retains and reuses its Agent worktree. After a terminal session failure, a replacement Agent session receives a new Agent worktree; the failed session's worktree remains preserved for inspection until a person explicitly cleans it up. An agent may read and modify files only within its Agent worktree. It may not push a remote, change machine-wide settings, or access files outside the Project unless the user triggers an explicit Action.
