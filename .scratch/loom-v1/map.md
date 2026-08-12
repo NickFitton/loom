@@ -24,10 +24,13 @@ Deliver Loom v1: a single-user Electron desktop platform that lets a person conn
 - [Define the orchestration, scheduling, and recovery protocol](issues/06-define-orchestration-and-recovery-protocol.md) — Weaves automatically queue ready Tickets against Device capacity; versioned idempotent commands and conservative recovery keep cross-device control safe.
 - [Define the safe agent command policy](issues/08-define-safe-agent-command-policy.md) — macOS-only enforced Agent containment, visible control-plane Capability profiles, scoped resource grants, and immutable Actions keep Pi work within its intended authority.
 - [Research and validate macOS Agent containment](issues/10-research-macos-agent-containment.md) — Validate a per-session Linux VM with only capability-scoped shares and mediated services; block unattended implementation until adversarial escape gates pass.
+- [Design v1 delivery slices and release gates](issues/09-design-v1-delivery-slices-and-release-gates.md) — First prove a manually started safe loop, then containment/recovery, then scheduling; validate it as a private developer preview, not a macOS app release.
 
 ## Not yet specified
 
-- Packaging, distribution, hosted deployment, observability, recovery, and support expectations appropriate for releasing Loom v1.
+- The exact implementation architecture and local developer workflow for the Electron execution plane and NestJS/Postgres control plane.
+- The concrete containment-validation harness and its macOS/CPU test matrix.
+- Hosting, observability, and support expectations for the private preview.
 - Whether the initial release needs a migration/import path for early local development data.
 
 ## Out of scope
@@ -35,3 +38,4 @@ Deliver Loom v1: a single-user Electron desktop platform that lets a person conn
 - Multi-user collaboration, roles, and sharing a Project or Weave across Accounts.
 - Accessing a Project from an Account's other Devices.
 - Loom-managed model billing or backend custody of provider credentials.
+- Public macOS application distribution, notarization, auto-update, and general-user support; the first preview is a developer-run build for its owner only.
