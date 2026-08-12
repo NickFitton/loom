@@ -53,3 +53,19 @@ A user-supplied model-provider API key, stored only in the secure credential sto
 ### Agent worktree
 
 A Git worktree and branch created for an implementation Ticket's active Agent session. A paused or otherwise resumable session retains and reuses its Agent worktree. After a terminal session failure, a replacement Agent session receives a new Agent worktree; the failed session's worktree remains preserved for inspection until a person explicitly cleans it up. An agent may read and modify files only within its Agent worktree. It may not push a remote, change machine-wide settings, or access files outside the Project unless the user triggers an explicit Action.
+
+### Agent containment
+
+The technically enforced execution boundary for an Agent session. It exposes only the session's allocated Agent worktree, its required local session data, and explicitly approved services; an Agent's working directory or prompt is not itself containment. Operations beyond that boundary require a distinct human Action.
+
+### Capability profile
+
+The control-plane-owned baseline authority assigned to a Ticket before an Agent session begins. It determines the resources and operation classes the session may use automatically. A profile does not grant access to a Project merely because it names a kind of work; Project access is an explicit scoped capability. An Agent may request additional, narrowly scoped capabilities only through a human Action.
+
+### Prototype artifact
+
+The retained, inspectable output of a prototype Ticket, such as an HTML file. It is created in the Ticket's isolated prototype workspace, not in a Project. The control plane retains it as untrusted Ticket data so the Account's Devices can surface it for an Action. A person may review it during the Ticket and later, and a later Agent may receive it through an explicit read-only capability.
+
+### Prototype artifact policy
+
+A Project-owned setting that limits how many Prototype artifacts one prototype Ticket may retain for review. It makes the permitted prototype exploration visible before the Agent session starts; it does not grant a Prototype Agent access to Project files.

@@ -22,10 +22,11 @@ Deliver Loom v1: a single-user Electron desktop platform that lets a person conn
 - [Define the device-local Project and Git lifecycle](issues/04-define-local-project-and-git-lifecycle.md) — Projects are explicit Device-local Git-clone connections; origins associate core repositories without deduplicating clones, and Agent worktrees are session-scoped, recoverable, and applied only through a human Action.
 - [Define the account, device, and authentication contract](issues/05-define-account-device-authentication-contract.md) — Browser-based verified-email sign-in enrols secure Devices; a short Device lease bounds offline authority, while revocation deletes local authority and credentials.
 - [Define the orchestration, scheduling, and recovery protocol](issues/06-define-orchestration-and-recovery-protocol.md) — Weaves automatically queue ready Tickets against Device capacity; versioned idempotent commands and conservative recovery keep cross-device control safe.
+- [Define the safe agent command policy](issues/08-define-safe-agent-command-policy.md) — macOS-only enforced Agent containment, visible control-plane Capability profiles, scoped resource grants, and immutable Actions keep Pi work within its intended authority.
+- [Research and validate macOS Agent containment](issues/10-research-macos-agent-containment.md) — Validate a per-session Linux VM with only capability-scoped shares and mediated services; block unattended implementation until adversarial escape gates pass.
 
 ## Not yet specified
 
-- The implementation sequence and acceptance gates once the execution architecture, data model, user flow, and security boundaries are decided.
 - Packaging, distribution, hosted deployment, observability, recovery, and support expectations appropriate for releasing Loom v1.
 - Whether the initial release needs a migration/import path for early local development data.
 
