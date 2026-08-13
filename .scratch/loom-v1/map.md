@@ -25,10 +25,10 @@ Deliver Loom v1: a single-user Electron desktop platform that lets a person conn
 - [Define the safe agent command policy](issues/08-define-safe-agent-command-policy.md) — macOS-only enforced Agent containment, visible control-plane Capability profiles, scoped resource grants, and immutable Actions keep Pi work within its intended authority.
 - [Research and validate macOS Agent containment](issues/10-research-macos-agent-containment.md) — Validate a per-session Linux VM with only capability-scoped shares and mediated services; block unattended implementation until adversarial escape gates pass.
 - [Design v1 delivery slices and release gates](issues/09-design-v1-delivery-slices-and-release-gates.md) — First prove a manually started safe loop, then containment/recovery, then scheduling; validate it as a private developer preview, not a macOS app release.
+- [Define the initial implementation architecture and developer workflow](issues/11-define-initial-implementation-architecture.md) — A pinned workspace separates Control plane, Electron Execution plane, contracts, domain rules, UI, and test fixtures; typed adapters and layered tests preserve Loom's safety boundaries.
 
 ## Not yet specified
 
-- The exact implementation architecture and local developer workflow for the Electron execution plane and NestJS/Postgres control plane.
 - The concrete containment-validation harness and its macOS/CPU test matrix.
 - Hosting, observability, and support expectations for the private preview.
 - Whether the initial release needs a migration/import path for early local development data.
